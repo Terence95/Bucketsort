@@ -1,6 +1,10 @@
 /*
 TERENCE
 */
+window.onload = function () {
+    var btn = document.getElementById('button');
+    btn.onclick = sort;
+}
 
 function sort() {
     var input = document.getElementById('input').value;
