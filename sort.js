@@ -3,7 +3,8 @@ TERENCE
 */
 window.onload = function () {
     var btn = document.getElementById('button');
-    btn.onclick = sort;
+    // dom2级事件处理
+    btn.addEventListener("click",sort,true);   
 }
 
 function sort() {
