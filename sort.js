@@ -1,5 +1,6 @@
 /*
 TERENCE
+3.31 将事件处理换成了跨浏览器的事件处理程序
 */
 window.onload = function () {
     
