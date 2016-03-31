@@ -60,6 +60,7 @@ function checkBoxValidate(cb) {
    }
 }
 
+// 跨浏览器事件处理
 // addHandler函数接收三个参数，要操作的元素,事件名称，和事件处理程序函数
 var EventUtil = {
     addHandler:function (element,type,handler) {
@@ -67,6 +68,15 @@ var EventUtil = {
             element.addEventListener(type,handler,false);
         }else if(element.attachEvent){
             element.attachEvent("on" + type,handler);
+        }else{
+            element["on"+type] = null;
+        }
+    },
+    removeHandler:function (element,type,handler) {
+        if(element.removeEventListener){
+            element.removeEventListener(type,handler,false);
+        }else if(element.detachEvent){
+            element.detachEvent("on" + type,handler);
         }else{
             element["on"+type] = null;
         }
