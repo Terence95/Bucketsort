@@ -2,14 +2,22 @@
 TERENCE
 3.31 将事件处理换成了跨浏览器的事件处理程序
 */
-window.onload = function () {
+// window.onload = function () {
     
+//     var btn = document.getElementById('button');
+//     // EventUtil.addEventListener(btn,"onclick",sort);
+//     // dom2级事件处理
+//     // btn.addEventListener("click",sort,true);   
+//     EventUtil.addHandler(btn,"click",sort);
+// }
+
+window.addEventListener('load',function(){
     var btn = document.getElementById('button');
     // EventUtil.addEventListener(btn,"onclick",sort);
     // dom2级事件处理
     // btn.addEventListener("click",sort,true);   
     EventUtil.addHandler(btn,"click",sort);
-}
+},false)
 
 function sort() {
     var input = document.getElementById('input').value;
